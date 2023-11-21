@@ -43,4 +43,6 @@ jobs:
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
         env:
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+          SONAR_ORGANIZATION_KEY: ${{ secrets.SONAR_ORGANIZATION_KEY }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
