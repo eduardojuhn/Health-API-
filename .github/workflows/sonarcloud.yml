@@ -6,9 +6,16 @@ on:
       - main
 
 jobs:
+  trigger-sonarcloud:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger SonarCloud Analysis
+        run: echo "Trigger SonarCloud Analysis"
+
   sonarcloud:
     runs-on: ubuntu-latest
-    needs: build  # Garante que a etapa de build seja concluída antes de iniciar a análise do SonarCloud
+    needs: trigger-sonarcloud  
 
     steps:
       - name: Checkout Repository
