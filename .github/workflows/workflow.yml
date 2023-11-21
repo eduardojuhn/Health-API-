@@ -38,11 +38,10 @@ jobs:
       - name: Analyze with SonarCloud
         run: |
           mvn sonar:sonar \
-            -Dsonar.projectKey=seu_projeto_key \
-            -Dsonar.organization=sua_organizacao_key \
+            -Dsonar.projectKey=eduardojuhn_Health-API- \
+            -Dsonar.organization=eduardojuhn \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=$SONAR_TOKEN
+            -Dsonar.login=$SONAR_TOKEN \
+            -Dsonar.branch.name=main  # Substitua 'main' pela sua branch padrão
         env:
-          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
-          SONAR_ORGANIZATION_KEY: ${{ secrets.SONAR_ORGANIZATION_KEY }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
