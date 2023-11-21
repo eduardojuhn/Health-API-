@@ -7,9 +7,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -22,8 +20,8 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install -e -X
-  
-sonarcloud:
+
+  sonarcloud:
     runs-on: ubuntu-latest
     needs: build  # Garante que a etapa de build seja concluída antes de iniciar a análise do SonarCloud
 
